@@ -35,7 +35,7 @@ public abstract class AbstractFile : ViewModelBase
 
     public static string GetFileTypeName(FileType type) => names[(int)type];
 
-    public static readonly char[] Separators = new [] { '\\', '/' };
+    public static readonly char[] Separators = new[] { '\\', '/' };
 }
 
 public class FilePath : AbstractFile

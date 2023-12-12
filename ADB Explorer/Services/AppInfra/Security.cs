@@ -40,7 +40,7 @@ public static class Security
 
         var files = Directory.GetFiles(path);
         var fileHashes = files.AsParallel().ToDictionary(f => FileHelper.ExtractRelativePath(f, parent).Replace('\\', '/'), CalculateWindowsFileHash);
-        
+
         return new(folderHashes.Concat(fileHashes));
     }
 
@@ -52,7 +52,7 @@ public static class Security
 
         var list = AdbRegEx.RE_ANDROID_FIND_HASH.Matches(stdout);
         return list.Where(m => m.Success).ToDictionary(
-            m => FileHelper.ExtractRelativePath(m.Groups["Path"].Value.TrimEnd('\r', '\n'), path.FullPath), 
+            m => FileHelper.ExtractRelativePath(m.Groups["Path"].Value.TrimEnd('\r', '\n'), path.FullPath),
             m => m.Groups["Hash"].Value.ToUpper());
     }
 
@@ -107,7 +107,7 @@ public static class Security
             var key = item.Key;
             var other = target.Where(f => f.Key == item.Key);
 
-            key = op.AndroidPath.IsDirectory 
+            key = op.AndroidPath.IsDirectory
                 ? FileHelper.ConcatPaths(op.AndroidPath, key)
                 : op.AndroidPath.FullPath;
 

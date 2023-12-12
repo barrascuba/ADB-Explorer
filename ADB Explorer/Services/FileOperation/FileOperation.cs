@@ -151,7 +151,7 @@ public abstract class FileOperation : ViewModelBase
 
             if (OperationName is OperationType.Rename)
                 return FileHelper.ConcatPaths(FilePath.ParentPath, FilePath.DisplayName);
-            
+
             return FilePath.ParentPath;
         }
     }
@@ -199,7 +199,7 @@ public abstract class FileOperation : ViewModelBase
             if (Status is not OperationStatus.Completed)
                 return false;
 
-            return !StatusInfo.IsValidationInProgress 
+            return !StatusInfo.IsValidationInProgress
                 && Device.Device.Status is AbstractDevice.DeviceStatus.Ok;
         }
     }

@@ -19,7 +19,7 @@ public class DirectoryLister : ViewModelBase
 
     private bool inProgress;
     public bool InProgress
-    { 
+    {
         get => inProgress;
         private set => Set(ref inProgress, value);
     }
@@ -103,9 +103,9 @@ public class DirectoryLister : ViewModelBase
 
         UpdateTask = Task.Delay(UpdateInterval);
         UpdateTask.ContinueWith(
-            (t) => Dispatcher.BeginInvoke(() => UpdateDirectoryList(!InProgress)), 
-            CurrentCancellationToken.Token, 
-            TaskContinuationOptions.OnlyOnRanToCompletion, 
+            (t) => Dispatcher.BeginInvoke(() => UpdateDirectoryList(!InProgress)),
+            CurrentCancellationToken.Token,
+            TaskContinuationOptions.OnlyOnRanToCompletion,
             TaskScheduler.Default);
     }
 

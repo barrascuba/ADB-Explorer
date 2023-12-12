@@ -118,7 +118,7 @@ public partial class MaskedTextBox : UserControl
         TextBox textbox = sender as TextBox;
         if (!textbox.IsFocused)
             return;
-        
+
         switch (ValidationType)
         {
             case ValidationType.SeparateDigits:

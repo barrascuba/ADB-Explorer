@@ -171,7 +171,8 @@ public static class DeviceHelper
     }
 
     public static DeviceAction ConnectDeviceCommand(NewDeviceViewModel device) => new(
-        () => {
+        () =>
+        {
             if (!device.IsConnectPortValid)
                 return false;
 

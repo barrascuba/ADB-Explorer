@@ -55,10 +55,10 @@ public class FileClass : FileStat
 
     public static FileClass FromWindowsPath(FilePath androidTargetPath, ShellObject windowsShellObject) =>
         new(androidTargetPath)
-    {
-        Size = windowsShellObject.Properties.System.Size.Value,
-        ModifiedTime = windowsShellObject.Properties.System.DateModified.Value
-    };
+        {
+            Size = windowsShellObject.Properties.System.Size.Value,
+            ModifiedTime = windowsShellObject.Properties.System.DateModified.Value
+        };
 
     public override string ToString()
     {
@@ -261,7 +261,7 @@ public class FileClass : FileStat
     {
         if (files.Any(i => i.Type != FileType.File))
             return 0;
-        
+
         return (ulong)files.Select(f => (decimal)f.Size.GetValueOrDefault(0)).Sum();
     }
 

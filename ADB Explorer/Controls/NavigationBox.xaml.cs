@@ -159,7 +159,7 @@ public partial class NavigationBox : UserControl
 
         var pairs = DisplayNames.Where(kv => path.StartsWith(kv.Key));
         var specialPair = pairs.Count() > 1 ? pairs.OrderBy(kv => kv.Key.Length).Last() : pairs.FirstOrDefault();
-        
+
         AddSpecialButton(ref path, ref expectedLength, ref tempButtons, specialPair);
         pathItems.Add(specialPair.Key);
 

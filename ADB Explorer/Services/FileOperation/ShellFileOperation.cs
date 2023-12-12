@@ -400,7 +400,7 @@ public static class ShellFileOperation
         {
             var op = new PackageInstallOperation(dispatcher, device, new(item), pushPackage: true);
             op.PropertyChanged += InstallOp_PropertyChanged;
-            
+
             Data.FileOpQ.AddOperation(op);
         }
     }

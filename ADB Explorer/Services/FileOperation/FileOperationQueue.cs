@@ -80,7 +80,7 @@ public class FileOperationQueue : ViewModelBase
             OnPropertyChanged(nameof(HasIncompleteOperations));
 
             Start();
-        } 
+        }
         finally
         {
             mutex.ReleaseMutex();
@@ -130,7 +130,8 @@ public class FileOperationQueue : ViewModelBase
         {
             mutex.WaitOne();
 
-            Func<FileOperation, bool> predicate = op => {
+            Func<FileOperation, bool> predicate = op =>
+            {
                 if (device is not null && op.Device.ID != device.ID)
                     return false;
 
@@ -189,7 +190,7 @@ public class FileOperationQueue : ViewModelBase
             item.Cancel();
         }
         IsActive = false;
-        
+
         if (isPush && !App.Current.Dispatcher.HasShutdownStarted)
             Data.RuntimeSettings.Refresh = true;
     }
@@ -207,7 +208,7 @@ public class FileOperationQueue : ViewModelBase
             FileOpRingVisibility();
         }
         finally
-        { 
+        {
             mutex.ReleaseMutex();
         }
     }
@@ -251,7 +252,7 @@ public class FileOperationQueue : ViewModelBase
     private void CurrentOperation_PropertyChanged(object sender, PropertyChangedEventArgs e)
     {
         var op = (FileOperation)sender;
-        
+
         if (e.PropertyName is nameof(FileOperation.Status))
         {
             Data.RuntimeSettings.IsPollingStopped = Data.Settings.StopPollingOnSync

@@ -8,7 +8,7 @@ public class RandomString
     {
         byte[] data = new byte[4 * size];
         RandomNumberGenerator.Create().GetBytes(data);
-        
+
         StringBuilder result = new();
         for (int i = 0; i < size; i++)
         {

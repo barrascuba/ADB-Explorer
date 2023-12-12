@@ -11,7 +11,7 @@ public static class QrGenerator
         QRCodeData qrCodeData = qrGenerator.CreateQrCode(val, QRCodeGenerator.ECCLevel.Q);
         var qrCode = new XamlQRCode(qrCodeData);
         var image = qrCode.GetGraphic(new System.Windows.Size(256, 256), foreground, background, false);
-        
+
         return image;
     }
 }

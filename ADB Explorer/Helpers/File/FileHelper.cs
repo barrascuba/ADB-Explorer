@@ -48,7 +48,7 @@ public static class FileHelper
     {
         if (pkg is not Package)
             return false;
-        
+
         return string.IsNullOrEmpty(Data.FileActions.ExplorerFilter)
             || pkg.ToString().Contains(Data.FileActions.ExplorerFilter, StringComparison.OrdinalIgnoreCase);
     };
@@ -57,7 +57,7 @@ public static class FileHelper
     {
         if (AdbExplorerConst.POSSIBLE_RECYCLE_PATHS.Contains(file.FullPath) || file.Extension == AdbExplorerConst.RECYCLE_INDEX_SUFFIX)
             return true;
-        
+
         if (!string.IsNullOrEmpty(Data.FileActions.ExplorerFilter) && !file.ToString().Contains(Data.FileActions.ExplorerFilter, StringComparison.OrdinalIgnoreCase))
             return true;
 
@@ -97,7 +97,7 @@ public static class FileHelper
         Data.FileActions.PasteState = FileClass.CutType.None;
     }
 
-    public static string ConcatPaths(FilePath path1, string path2) => 
+    public static string ConcatPaths(FilePath path1, string path2) =>
         ConcatPaths(path1.FullPath, path2, path1.PathType is AbstractFile.FilePathType.Android ? '/' : '\\');
 
     public static string ConcatPaths(string path1, string path2, char separator = '/')
@@ -111,7 +111,7 @@ public static class FileHelper
             return FilePath.GetFullName(fullPath);
 
         var index = fullPath.IndexOf(parent);
-        
+
         var result = index < 0
             ? fullPath
             : fullPath[parent.Length..];

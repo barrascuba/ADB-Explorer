@@ -9,7 +9,7 @@ public class Package : ViewModelBase
         System,
         User,
     }
-    
+
     private string name;
     public string Name
     {

@@ -190,7 +190,7 @@ public abstract class AbstractSetting : ViewModelBase
         this.valueProp = valueProp;
         Description = description;
         Commands = commands;
-        
+
         Settings.PropertyChanged += Settings_PropertyChanged;
         RuntimeSettings.PropertyChanged += Settings_PropertyChanged;
     }

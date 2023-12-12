@@ -94,7 +94,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         DevicesObject.PropertyChanged += DevicesObject_PropertyChanged;
         DevicesObject.UIList.CollectionChanged += UIList_CollectionChanged;
         FileOpFilters.CheckedFilterCount.PropertyChanged += CheckedFilterCount_PropertyChanged;
-        
+
         var versionTask = AdbHelper.CheckAdbVersion();
         versionTask.ContinueWith((t) =>
         {
@@ -377,7 +377,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     {
         if (FileOperationQueue.NotifyProperties.Contains(e.PropertyName))
             UpdateFileOp();
-        
+
         if (e.PropertyName is nameof(FileOperationQueue.CurrentChanged))
             SortFileOps();
 
@@ -427,7 +427,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     {
         if (e.NewItems is null || Dispatcher.HasShutdownStarted)
             return;
-        
+
         if (e.OldItems is null || e.OldItems.Count < 1)
             Dispatcher.Invoke(LogControlsPanel.Items.Refresh);
 
@@ -473,7 +473,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
                 break;
             case nameof(AppSettings.EnableLog):
                 FileActions.IsLogToggleVisible.Value = Settings.EnableLog;
-                
+
                 if (!Settings.EnableLog)
                 {
                     AppActions.ToggleActions.Find(a => a.FileAction.Name is FileAction.FileActionType.LogToggle).Toggle(false);
@@ -545,7 +545,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private void ThemeService_PropertyChanged(object sender, PropertyChangedEventArgs e) =>
         Dispatcher.Invoke(SetTheme);
 
-    
+
 
     private void Window_Closing(object sender, CancelEventArgs e)
     {
@@ -811,7 +811,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         NavigationBox.Mode = NavigationBox.ViewMode.Breadcrumbs;
         NavigationBox.Path = NavHistory.StringFromLocation(NavHistory.SpecialLocation.DriveView);
-        
+
         DriveList.ItemsSource = DevicesObject.Current.Drives;
 
         if (DriveList.SelectedIndex > -1)
@@ -1542,7 +1542,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         }
         else
         {
-            RuntimeSettings.IsPathBoxFocused = false;   
+            RuntimeSettings.IsPathBoxFocused = false;
             var row = DataGridRow.GetRowContainingElement(cell);
             var current = row.GetIndex();
 
@@ -1649,7 +1649,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         ExplorerGrid.ScrollIntoView(newItem);
         ExplorerGrid.SelectedItem = newItem;
-        
+
         IsInEditMode = true;
         if (!IsInEditMode) // in case cell was not acquired
             FileActionLogic.CreateNewItem(newItem);

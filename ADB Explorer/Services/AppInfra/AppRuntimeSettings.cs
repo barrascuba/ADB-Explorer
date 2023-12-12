@@ -185,7 +185,7 @@ public class AppRuntimeSettings : ViewModelBase
         set
         {
             if (!Set(ref pathBoxNavigation, value))
-                OnPropertyChanged();        
+                OnPropertyChanged();
         }
     }
 

@@ -29,7 +29,7 @@ public partial class ADBService
         public override DeviceType Type => Device.Type;
 
         public override DeviceStatus Status => Device.Status;
-        
+
         public override string IpAddress => Device.IpAddress;
 
         public AdbDevice(LogicalDeviceViewModel other)
@@ -79,18 +79,18 @@ public partial class ADBService
                 isLink: (mode & (UInt32)UnixFileMode.S_IFMT) == (UInt32)UnixFileMode.S_IFLNK);
         }
 
-        private static FileType ParseFileMode(uint mode) => 
+        private static FileType ParseFileMode(uint mode) =>
             (UnixFileMode)(mode & (UInt32)UnixFileMode.S_IFMT) switch
-        {
-            UnixFileMode.S_IFSOCK => FileType.Socket,
-            UnixFileMode.S_IFLNK => FileType.Unknown,
-            UnixFileMode.S_IFREG => FileType.File,
-            UnixFileMode.S_IFBLK => FileType.BlockDevice,
-            UnixFileMode.S_IFDIR => FileType.Folder,
-            UnixFileMode.S_IFCHR => FileType.CharDevice,
-            UnixFileMode.S_IFIFO => FileType.FIFO,
-            _ => FileType.Unknown,
-        };
+            {
+                UnixFileMode.S_IFSOCK => FileType.Socket,
+                UnixFileMode.S_IFLNK => FileType.Unknown,
+                UnixFileMode.S_IFREG => FileType.File,
+                UnixFileMode.S_IFBLK => FileType.BlockDevice,
+                UnixFileMode.S_IFDIR => FileType.Folder,
+                UnixFileMode.S_IFCHR => FileType.CharDevice,
+                UnixFileMode.S_IFIFO => FileType.FIFO,
+                _ => FileType.Unknown,
+            };
 
         public FileType GetFile(string path, CancellationToken cancellationToken)
         {
@@ -134,7 +134,7 @@ public partial class ADBService
                 arg,
                 EscapeAdbString(source),
                 EscapeAdbString(target));
-            
+
             // Each line should be a progress update (but sometimes the output can be weird)
             string lastStdoutLine = null;
             foreach (string stdoutLine in stdout)

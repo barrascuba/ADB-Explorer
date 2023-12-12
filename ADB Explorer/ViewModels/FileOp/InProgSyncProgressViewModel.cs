@@ -9,7 +9,7 @@ internal class InProgSyncProgressViewModel : FileOpProgressViewModel
 
     public InProgSyncProgressViewModel() : base(FileOperation.OperationStatus.InProgress)
     {
-        
+
     }
 
     public InProgSyncProgressViewModel(AdbSyncProgressInfo adbInfo) : this()

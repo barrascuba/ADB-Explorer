@@ -23,7 +23,7 @@ public class FileRenameOperation : AbstractShellFileOperation
         Status = OperationStatus.InProgress;
         StatusInfo = new InProgShellProgressViewModel();
         CancelTokenSource = new();
-        
+
         var operationTask = ADBService.ExecuteDeviceAdbShellCommand(Device.ID,
             CancelTokenSource.Token,
             "mv",

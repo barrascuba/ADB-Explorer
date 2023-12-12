@@ -1,5 +1,4 @@
 ﻿using ADB_Explorer.Converters;
-using ADB_Explorer.Services;
 using ADB_Explorer.ViewModels;
 
 namespace ADB_Explorer.Models;

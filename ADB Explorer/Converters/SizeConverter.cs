@@ -2,7 +2,7 @@
 {
     public static class UnitConverter
     {
-        private static readonly Dictionary<int,string> scale_table = new() { { -3, "n" }, { -2, "u" }, { -1, "m" }, { 0, "" }, { 1, "K" }, { 2, "M" }, { 3, "G" }, { 4, "T" }, { 5, "P" }, { 6, "E" } };
+        private static readonly Dictionary<int, string> scale_table = new() { { -3, "n" }, { -2, "u" }, { -1, "m" }, { 0, "" }, { 1, "K" }, { 2, "M" }, { 3, "G" }, { 4, "T" }, { 5, "P" }, { 6, "E" } };
 
         public static string ToSize(this UInt64 bytes, bool scaleSpace = false, int bigRound = 1, int smallRound = 0)
         {

@@ -43,7 +43,7 @@ public static class DialogService
 
     private static void HidePanes()
     {
-        Data.RuntimeSettings.IsSettingsPaneOpen = 
+        Data.RuntimeSettings.IsSettingsPaneOpen =
         Data.RuntimeSettings.IsDevicesPaneOpen = false;
     }
 

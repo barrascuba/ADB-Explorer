@@ -44,7 +44,7 @@ internal class FileOpTest
 
             return;
         }
-        
+
         i = 0;
 
         Data.FileOpQ.AddOperation(InProgressTestOperation.CreateFolderInProgress(App.Current.Dispatcher, Data.CurrentADBDevice, "/Folder"));

@@ -62,7 +62,7 @@ public class FileSyncOperation : FileOperation
 
         operationTask.ContinueWith((t) => progressUpdates.CollectionChanged -= ProgressUpdates_CollectionChanged);
 
-        operationTask.ContinueWith((t) => 
+        operationTask.ContinueWith((t) =>
         {
             Status = OperationStatus.Completed;
             if (t.Result is null)

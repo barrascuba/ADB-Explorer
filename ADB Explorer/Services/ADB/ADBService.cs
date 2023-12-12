@@ -71,7 +71,7 @@ public partial class ADBService
         cmdProcess.StartInfo.Arguments = arguments;
         cmdProcess.StartInfo.StandardOutputEncoding = encoding;
         cmdProcess.StartInfo.StandardErrorEncoding = encoding;
-        
+
         if (IsMdnsEnabled)
             cmdProcess.StartInfo.EnvironmentVariables[ENABLE_MDNS] = "1";
 
@@ -128,7 +128,7 @@ public partial class ADBService
         string file, string cmd, Encoding encoding, CancellationToken cancellationToken, params string[] args)
     {
         using var cmdProcess = StartCommandProcess(file, cmd, encoding, args);
-        
+
         Task<string?> stdoutLineTask = null;
         string stdoutLine = null;
         do

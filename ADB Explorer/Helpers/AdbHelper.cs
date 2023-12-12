@@ -1,5 +1,4 @@
-﻿using ADB_Explorer.Converters;
-using ADB_Explorer.Models;
+﻿using ADB_Explorer.Models;
 using ADB_Explorer.Resources;
 using ADB_Explorer.Services;
 
@@ -66,7 +65,7 @@ internal static class AdbHelper
                     File.WriteAllBytes(newPath, Properties.Resources.AdbProgressRedirection);
                     Data.ProgressRedirectionPath = newPath;
                 }
-                
+
                 return;
             }
             catch (Exception e)
@@ -134,7 +133,7 @@ internal static class AdbHelper
         }
     });
 
-    public static bool SilentPull(Device device, FilePath file, string windowsPath) 
+    public static bool SilentPull(Device device, FilePath file, string windowsPath)
         => 0 == ADBService.ExecuteAdbCommand("pull",
                                              out _,
                                              out _,

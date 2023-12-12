@@ -4,6 +4,6 @@ internal class CanceledOpProgressViewModel : FileOpProgressViewModel
 {
     public CanceledOpProgressViewModel() : base(Services.FileOperation.OperationStatus.Canceled)
     {
-        
+
     }
 }

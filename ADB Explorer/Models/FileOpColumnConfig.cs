@@ -169,7 +169,7 @@ public class FileOpColumnConfig : ViewModelBase
 
                 headerStyle.Setters.Add(new EventSetter(FrameworkElement.SizeChangedEvent, new SizeChangedEventHandler(FileOpColumnHeader_SizeChanged)));
             }
-            
+
             return headerStyle;
         }
     }
@@ -218,7 +218,7 @@ public class FileOpColumnConfig : ViewModelBase
         Icon = icon;
         CellTemplate = cellTemplate;
         SortPath = sortPath;
-        
+
         bool isChecked = visibleByDefault;
         int index = defaultIndex;
         double width = defaultWidth;

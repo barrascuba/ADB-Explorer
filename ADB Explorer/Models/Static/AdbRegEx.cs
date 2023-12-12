@@ -1,6 +1,4 @@
-﻿using System.Text.RegularExpressions;
-
-namespace ADB_Explorer.Models
+﻿namespace ADB_Explorer.Models
 {
     public static class AdbRegEx
     {

@@ -19,7 +19,7 @@ internal class FileOpTreeStatusConverter : IValueConverter
         {
             return StatusString(updates.First().GetType(), message: updates.OfType<FileOpErrorInfo>().LastOrDefault()?.Message);
         }
-        
+
         throw new NotSupportedException();
     }
 

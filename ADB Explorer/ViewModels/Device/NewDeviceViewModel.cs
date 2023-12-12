@@ -72,7 +72,7 @@ public class NewDeviceViewModel : PairingDeviceViewModel
     public NewDeviceViewModel(NewDevice device) : base(device)
     {
         Device = device;
-        
+
         ConnectCommand = DeviceHelper.ConnectDeviceCommand(this);
 
         ClearCommand = new(() =>
@@ -130,7 +130,7 @@ public class NewDeviceViewModel : PairingDeviceViewModel
     {
         if (HostName != name)
         {
-            Device.HostName = name; 
+            Device.HostName = name;
             OnPropertyChanged(nameof(HostName));
             OnPropertyChanged(nameof(IsHostNameValid));
         }

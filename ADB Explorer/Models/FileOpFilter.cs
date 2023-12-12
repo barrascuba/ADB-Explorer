@@ -56,7 +56,7 @@ public class FileOpFilter : ViewModelBase
             }
         }
     }
-    
+
     private CheckBox checkBox = null;
     public CheckBox CheckBox
     {

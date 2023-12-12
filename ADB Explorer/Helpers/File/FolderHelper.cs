@@ -11,8 +11,8 @@ internal class FolderHelper
     {
         Data.CurrentDisplayNames.TryAdd(NavHistory.StringFromLocation(NavHistory.SpecialLocation.DriveView), Data.DevicesObject.Current.Name);
 
-        foreach (var drive in Data.DevicesObject.Current.Drives.OfType<LogicalDriveViewModel>().Where(d => d.Type 
-            is not AbstractDrive.DriveType.Root 
+        foreach (var drive in Data.DevicesObject.Current.Drives.OfType<LogicalDriveViewModel>().Where(d => d.Type
+            is not AbstractDrive.DriveType.Root
             and not AbstractDrive.DriveType.Internal))
         {
             Data.CurrentDisplayNames.TryAdd(drive.Path, drive.Type is AbstractDrive.DriveType.External

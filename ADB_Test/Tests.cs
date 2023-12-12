@@ -123,7 +123,7 @@ namespace ADB_Test
             string[] names1 = { "", "2" };
 
             Assert.AreEqual("", FileClass.ExistingIndexes(names[..0])); // empty array
-            Assert.AreEqual(" 1", FileClass.ExistingIndexes(new [] { "" }));
+            Assert.AreEqual(" 1", FileClass.ExistingIndexes(new[] { "" }));
             Assert.AreEqual(" 2", FileClass.ExistingIndexes(names));
             Assert.AreEqual(" 1", FileClass.ExistingIndexes(names1));
 

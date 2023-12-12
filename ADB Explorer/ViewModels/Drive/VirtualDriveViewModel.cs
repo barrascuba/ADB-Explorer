@@ -13,7 +13,7 @@ class VirtualDriveViewModel : DriveViewModel
 
     public long? ItemsCount => Drive.ItemsCount;
 
-    
+
     public VirtualDriveViewModel(VirtualDrive drive) : base(drive)
     {
         Drive = drive;

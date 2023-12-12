@@ -36,7 +36,8 @@ internal class FileActionsEnable : ViewModelBase
     public bool PushPackageEnabled
     {
         get => pushPackageEnabled;
-        set {
+        set
+        {
             if (Set(ref pushPackageEnabled, value))
             {
                 OnPropertyChanged(nameof(PushEnabled));
